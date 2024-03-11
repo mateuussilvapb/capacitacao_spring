@@ -1,5 +1,6 @@
 package io.github.mateuussilvapb.courses.estudante;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.github.mateuussilvapb.courses.configs.BaseEntity;
 import io.github.mateuussilvapb.courses.matricula.Matricula;
 import jakarta.persistence.Entity;
@@ -19,5 +20,6 @@ public class Estudante extends BaseEntity {
     private String nome;
     private Date dataMatricula;
     @OneToMany(mappedBy = "estudante")
+    @JsonIgnore
     private List<Matricula> matriculas;
 }
